@@ -11,10 +11,10 @@ class Console(object):
         self.scheduled = {}
         
         def add_scheduled_day(self,date, schedule_position):#schedule position just means ("","") or ("shift_one","shift_two")
-            if schedule_position[0] != "" & schedule_position[0] != self.scheduled[date][0]
-                self.scheduled[date][0] = schdule_position[0]
-            elif schedule_position[1] != "" & schedule_position[1] != self.scheduled[date][1]
-                self.scheduled[date][1] = schdule_position[1]
+            if schedule_position[0] != "" & schedule_position[0] != self.scheduled[date][0]:
+                self.scheduled[date][0] = schedule_position[0]
+            elif schedule_position[1] != "" & schedule_position[1] != self.scheduled[date][1]:
+                self.scheduled[date][1] = schedule_position[1]
                 
         def printschedule(self):
         #create ordered list of dictionary values

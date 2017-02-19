@@ -51,6 +51,7 @@ class Controller(object):
         
     def add_pto_dates(self, pto_start, pto_end):
         # add each individual shift to pto range
+        #/todo add each date in range for pto
         self.pto_dates.append(pto_dates)
         
     def qualified(self, desk):
@@ -69,7 +70,7 @@ class Controller(object):
         print("Consoles : " + str(self.consoles))
         print("Primary Console : " + self.primary_console)
         print("Over Time Offered : "+str(self.oto))
-        return self
+
         
 
     def check_date(self, year, month, day):
