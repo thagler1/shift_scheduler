@@ -3,10 +3,8 @@ from datetime import timedelta
 import collections
 
 class Schedule(object):
-    #Hardcoded shift info, this can be bypassed. 
-    
-    
-    
+    # Hardcoded shift info, this can be bypassed.
+
     shift_id = ['one','two','three','four']
     offsets = {'one': 17, 'two':10, 'three':3, 'four':24}
     
@@ -20,8 +18,8 @@ class Schedule(object):
     
         for i, shift in enumerate(sequence):
             date_count = self.startdate + datetime.timedelta(days=i)
-            #print(date_count)
-            #print(type(date_count))
+            # print(date_count)
+            # print(type(date_count))
             if shift == "Day":
                 schedule[date_count][0] = self.shift_id
                 
@@ -49,7 +47,7 @@ class Schedule(object):
         self.addshift(full_sequence[:self.year], self.shift_id, schedule)
         return schedule
     
-    def __init__(self, shift_id, zeroday, rotation = dupont):
+    def __init__(self, shift_id, zeroday, rotation=dupont):
         self.startdate = datetime.date(2017,1, 1)  #year, month, day
         self.enddate = datetime.date(2020,1,1)
         self.span = (self.enddate - self.startdate)
@@ -64,14 +62,14 @@ class Schedule(object):
 
     
     def printschedule(self):
-        #create ordered list of dictionary values
+        # create ordered list of dictionary values
         ordered_schedule = collections.OrderedDict(sorted(self.schedule.items()))
         for day in ordered_schedule:
             print(ordered_schedule[day])
         
     def date_check(self, year, month, day):
-    #check to see if a shift is scheduled for a specific day. Returns dupont posistion
-        check_date = datetime.date(year, month, day)  #year, month, day
+        # check to see if a shift is scheduled for a specific day. Returns dupont position
+        check_date = datetime.date(year, month, day)  # year, month, day
         return (self.schedule[check_date])
 
     def check_date(self, date):

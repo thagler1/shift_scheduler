@@ -14,7 +14,7 @@ controllers = [
     'pto':160,
     'manager':"Manager 1",
     'consoles':{"Texas Express":"12/15/15","Chaparral":"02/20/13"},
-    'primary_console': 'Chaparral'
+    'primary_console': 'Texas Express'
 },
 {
     'name':"Bonnie",
@@ -76,7 +76,7 @@ consoles =[{
     'name': 'Texas Express',
     'manager': 'boss man',
 },
-{   'name': 'Texas Express',
+{   'name': 'Chaparral',
     'manager': 'boss man',}
    
 ]

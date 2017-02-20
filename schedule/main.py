@@ -1,4 +1,4 @@
-from schedule_lib import controller, functions, calendar, schedule
+from schedule_lib import controller, functions, calendar, schedule, console
 from testData import controllerinput as testdata
 from testData import initialization as startup
 import datetime
@@ -12,11 +12,17 @@ controller_list[2].add_oto(72)
 controller_list[3].add_oto(24)
 
 controller_list[3].add_consoles(('Seminole', '04/02/1990'))
-controller_list[3].set_primary_console('Seminole')
+#controller_list[3].set_primary_console('Seminole')
 x = functions.lowman(controller_list)
 
-print(x.info())
-print(len(shift_list))
 
-for console in console_list:
-    print(functions.master_shift_schedule(shift_list, datetime.date(2017, 1, 1), datetime.date(2017, 2, 27)))
+master_schedule = functions.master_shift_schedule(shift_list, datetime.date(2017, 1, 1), datetime.date(2018, 12, 27))
+day, night = console_list[1].controller_on_shift(master_schedule,datetime.date(2017,12,25),controller_list)
+print(day.name)
+print(night.name)
+#print(console_list)
+
+
+
+
+

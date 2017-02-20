@@ -5,7 +5,7 @@
 #Date: 2/19/2017
 #Last Modified: 2/19/17
 #######################################################################################
-from schedule_lib import controller, functions, calendar, schedule
+from schedule_lib import controller, functions, calendar, schedule, console
 from testData import controllerinput as testdata
 #initialize empty list for storing controller objects in
 
@@ -20,9 +20,11 @@ def initialize():
     shift_list = [schedule.Schedule(shift, offsets[shift]) for i, shift in enumerate(shift_id)]
     
     #Initialize Consoles
-    for console in testdata.consoles:
-        newconsole = (console['name'],console['manager'])
+    for desk in testdata.consoles:
+        newconsole = console.Console(desk['name'], desk['manager'])
         console_list.append(newconsole)
+
+
         
     
     
